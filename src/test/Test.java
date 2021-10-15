@@ -1,6 +1,7 @@
 package test;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -23,10 +24,9 @@ public class Test {
     for (Object elem: miLista){
             System.out.println("elem: " + elem);
 }
+    imprimir(miLista);
     
-    miLista.forEach(elem -> {
-        System.out.println("elem: " + elem);
-    });
+    
         System.out.println("");
         
     Map miMap = new HashMap();
@@ -36,5 +36,12 @@ public class Test {
     
     String nombre  = (String)miMap.get("Valor1");
         System.out.println("Nombre: " + nombre);
+        imprimir(miMap.keySet());//devuelve claves
+        imprimir(miMap.values());//devuelve valores
    } 
+    public static void imprimir(Collection coleccion){
+        coleccion.forEach(elem -> {
+        System.out.println("elem: " + elem);
+    }); 
+    }
 }
